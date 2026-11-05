@@ -132,7 +132,7 @@ Add this to `~/.config/forge/init.rhai`:
 
 ```rhai
 use_package("magit", #{
-  vc: "https://github.com/martial-plains/forge-plugin-magit",
+  vc: "https://github.com/martial-plains/magit.forge.git",
   commands: ["magit-status", "magit-dispatch"],
 });
 ```
