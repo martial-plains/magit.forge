@@ -1,0 +1,27 @@
+[package]
+name = "forge-magit"
+version = "0.1.0"
+edition = "2024"
+license = "GPL-3.0-or-later"
+description = "Magit for Forge: status buffer, hunk and line staging, popups for commit, push, pull, fetch, branch, stash, rebase, merge, cherry-pick, revert, reset, tag, log, diff, remotes, bisect"
+
+# The plugin's manifest, built into the .wasm by the SDK.
+[package.metadata.forge]
+name = "magit"
+
+[package.metadata.forge.permissions]
+# Every git operation shells out to git in the repository.
+processes = ["git"]
+
+# Standalone: not part of the main workspace build.
+[workspace]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+forge-plugin-sdk = { git = "https://github.com/martial-plains/forge" }
+
+[profile.release]
+opt-level = "s"
+lto = true
