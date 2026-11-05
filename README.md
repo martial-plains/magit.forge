@@ -135,12 +135,11 @@ use_package("magit", #{
   vc: "https://github.com/martial-plains/forge-plugin-magit",
   pin: "v0.1.0",
   commands: ["magit-status", "magit-dispatch"],
-  grant: #{ processes: ["git"] },
 });
 ```
 
-The `processes` grant lets Magit run `git` outside the sandbox. Forge asks before
-running the package build command the first time.
+Forge asks for permission to run `git` when the plugin first loads. Forge asks
+before running the package build command the first time.
 
 ## Building
 
